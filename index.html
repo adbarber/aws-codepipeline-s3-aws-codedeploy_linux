@@ -1,8 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <script>
+    function myFunction2() {
+    	
+        var x = document.getElementById("frm1");
+        var text = '';
+        var i;
+        for (i = 0; i < x.length ;i++) {
+            text += 'Grab Values' + i + ': <input type="text" id="fname" onchange="myFunction2()" name="c' + '" value = "' + x.elements[i].value.toUpperCase() + '"> <br><br>' + x.elements[i].value.toUpperCase() + ' <br><br>';
+        }
+        document.getElementById("frm1").innerHTML = text;
+
+    }
+  </script>
   <meta charset="utf-8">
-  <title>Sample Deployment</title>
+  <title>Austin's Sample Deployment</title>
   <style>
     body {
       color: #ffffff;
@@ -26,11 +39,17 @@
 </head>
 <body>
   <div align="center">
-    <h1>Congratulations!</h1>
+    <h1>Go Heels!</h1>
     <h2>You have successfully created a pipeline that retrieved this source application from an Amazon S3 bucket and deployed it 
 	to three Amazon EC2 instances using AWS CodeDeploy.</h2>
     <p>For next steps, read the AWS CodePipeline Documentation.</p>
   </div>
+   <form id="frm1" action="/action_page.php">
+    Grab Values0: <input type="text" onchange="myFunction2()"> <br><br><br><br>
+    Grab Values1: <input type="text" onchange="myFunction2()">
+   </form> 
+
+   <p id="demo"></p>
 </body>
 </html>
 
